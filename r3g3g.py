@@ -20,4 +20,6 @@ phone_no0 = re.compile(r'(\d{3})-(\d{3})-(\d{4})')
 
 mo0 = phone_no0.search(message)
 
-print('first set of no:', mo0.groups())
+print('first set of no:', mo0.group()) # if you want to get a list of all the group present use groups() the plural
+
+# you can assign your .groups to a variable. e.g fish, name = mo.groups
