@@ -94,3 +94,15 @@ Python’s regular expressions are greedy by default, which means that in ambigu
 '''
 
 # the findall( method)
+
+'''
+in addition to the search() method, you can also use the findall
+method. the findall() method will return the strings of every
+match in the searched string
+'''
+
+mo6 = re.compile(r'(\d){3}-(\d){4}')
+
+reg5 = mo6.findall('this is my favourite number 345-4563 this is ores favourite number 345 this is our number 245-3456')
+
+print(reg5)
