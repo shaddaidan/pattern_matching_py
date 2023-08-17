@@ -101,8 +101,57 @@ method. the findall() method will return the strings of every
 match in the searched string
 '''
 
-mo6 = re.compile(r'(\d){3}-(\d){4}')
+# mo6 = re.compile(r'(\d){3}-(\d){4}') this would not work because findall does not work on groups
+
+mo6 = re.compile(r'\d\d\d-\d\d\d\d')
 
 reg5 = mo6.findall('this is my favourite number 345-4563 this is ores favourite number 345 this is our number 245-3456')
 
 print(reg5)
+
+'''
+If there are groups in the regular expression, then findall() will return a list of tuples. Each tuple represents a found match, and its items are the matched strings for each group in the regex. 
+
+'''
+
+# shorthands in regexes
+
+'''
+\d          any numeric digit
+\D          any character that is not a numeric digit
+\w          letter,numeric digit,underscore character
+\W          any character that is not the ones specified above
+\s          space,tab,newline
+\S          any character that is not the character above
+'''
+
+'''
+other shorthands
+[0-5] == (0|1|2|3|4|5) this method works for letter as well[a-zA-Z]
+'''
+
+# something cool
+
+mo7 = re.compile(r'\d+\s\w+')
+
+reg6 = mo7.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
+print(reg6)
+
+'''
+The regular expression \d+\s\w+ will match text that has 
+one or more numeric digits (\d+), followed by a whitespace 
+character (\s), followed by one or more letter/digit/underscore 
+characters (\w+). The findall() method returns all matching strings
+ of the regex pattern in a list.
+'''
+
+# making your own character classes
+
+'''
+There are times when you want to match a set of 
+characters but the shorthand character classes 
+(\d, \w, \s, and so on) are too broad. You can 
+define your own character class using square brackets. 
+For example, the character class [aeiouAEIOU] will match
+ any vowel, both lowercase and uppercase.
+'''
