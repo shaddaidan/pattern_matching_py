@@ -155,3 +155,24 @@ define your own character class using square brackets.
 For example, the character class [aeiouAEIOU] will match
  any vowel, both lowercase and uppercase.
 '''
+
+'''
+when using [] this to match charaters you do not need to escape
+special characters that are in the square brackets with (\) 
+
+and also you use the ^ as a negative character class. 
+so if you use this on an object the findall() will
+return everything that does not count as the value that follows
+the ^ character
+'''
+
+'''
+ the wild card character. the dot(.) will match anything 
+ that has any character except a new line
+'''
+
+mo8 = re.compile(r'.sha..')
+
+reg7 = mo8.findall('ashaman is such a sha and shaddai is masha so shadding cool casha')
+
+print(reg7)
