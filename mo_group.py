@@ -176,3 +176,5 @@ mo8 = re.compile(r'.sha..')
 reg7 = mo8.findall('ashaman is such a sha and shaddai is masha so shadding cool casha')
 
 print(reg7)
+
+# note to self learn to summarise your comments so that they are not so long next time.
